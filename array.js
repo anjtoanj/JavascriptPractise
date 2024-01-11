@@ -66,3 +66,70 @@ return the indices that has matching target? 7+11 (2,4), 4+14 (1,5)
 
 */
 
+//Example 1:
+ // Input: nums = [0,1,0,3,12]
+// Output: [1,3,12, 0,0]
+// let nums = [0,1,0,3,12];
+// console.log(nums.sort());
+// for(let index=0;index<nums.length;index++){
+//     if(nums[index]==0){
+//         nums.shift();
+//         nums.push(0);     
+//     }
+//     console.log("Iteration "+index+" "+nums);
+// }
+
+
+//2) Array intersection
+//Example 1:
+ console.log("Array intersection");
+let nums1 = [1,2,1];
+let nums2 = [1,2];
+let temp=[];
+let n1;
+let n2;
+let countnum1 =nums1.length;
+let countnum2 =nums2.length;
+if(countnum1>countnum2)
+{
+    n1=countnum1;
+    n2=countnum2;
+ } else{
+    n1=countnum2;
+    n2=countnum1;
+
+ }
+ for(let i=0;i<n1;i++){
+    for(let j=0;j<n2;j++){
+        if(nums1[i]==nums2[j]){
+            temp.push(nums1[i]);
+         }
+    }
+  }
+console.log(temp);
+console.log("check for any duplciate values in temp array");
+let j=0;
+temp.sort();
+for(var i=0;i<=temp.length;i++){   
+        if(temp[j]==temp[j+1]){
+            temp.shift();            
+         }
+  }
+ console.log(temp);
+ 
+//3) Find the maximum and minimum:
+
+let nums3 = [34, 7, 21, 89, 54, 10, 91, 67];
+
+for(let i=0;i<nums3.length;i++){
+    for(let j=0;j<nums3.length;j++){
+        if(nums3[i]>nums2[j]){
+            temp.push(nums1[i]);
+         }
+         else{
+            (temp.push(num1[j]))
+         }   
+    }
+  }
+
+
