@@ -7,3 +7,11 @@ and return the sum
 // finally, print the sum !! 
 
 */
+var sum =0;
+const myArray =[];
+myArray.push(sum);
+for(let i=1; i<=10;i++){
+     sum = sum+i;
+     myArray.push(sum);
+}
+console.log(myArray);
