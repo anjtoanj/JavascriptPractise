@@ -69,15 +69,15 @@ return the indices that has matching target? 7+11 (2,4), 4+14 (1,5)
 //Example 1:
  // Input: nums = [0,1,0,3,12]
 // Output: [1,3,12, 0,0]
-// let nums = [0,1,0,3,12];
-// console.log(nums.sort());
-// for(let index=0;index<nums.length;index++){
-//     if(nums[index]==0){
-//         nums.shift();
-//         nums.push(0);     
-//     }
-//     console.log("Iteration "+index+" "+nums);
-// }
+let nums = [0,1,0,3,12];
+console.log(nums.sort());
+for(let index=0;index<nums.length;index++){
+    if(nums[index]==0){
+        nums.shift();
+        nums.push(0);     
+    }
+    console.log("Iteration "+index+" "+nums);
+}
 
 
 //2) Array intersection
@@ -121,15 +121,76 @@ for(var i=0;i<=temp.length;i++){
 
 let nums3 = [34, 7, 21, 89, 54, 10, 91, 67];
 
-for(let i=0;i<nums3.length;i++){
-    for(let j=0;j<nums3.length;j++){
-        if(nums3[i]>nums2[j]){
-            temp.push(nums1[i]);
+let maxElement = nums3[0];
+let minElement = nums3[0];
+    for(let j=0;j<nums3.length-1;j++){
+        if( maxElement<nums3[j]){
+            maxElement =nums3[j];            
          }
-         else{
-            (temp.push(num1[j]))
-         }   
+         if( minElement>nums3[j]){
+            minElement =nums3[j];            
+         }
     }
+  console.log("Maximum element:" +maxElement);
+  console.log("Minimum element:" +minElement);
+
+//   4) Remove Duplicates:
+
+// Given an integer array with duplicate elements as input, return a new array with duplicates 
+// elements removed. The order of the elements in the resulting array should be same as the order
+// in the original array.
+
+// Example: 
+// Input: iputArray = [1, 2, 3, 4, 2, 5, 6, 1, 6]
+// Output: resultArray = [1, 2, 3, 4, 5, 6]
+
+let inputArray1 = [1, 2, 3, 4, 2, 5, 6, 1, 6]
+const tmpSet = new Set();
+let len =inputArray1.length;
+for(let i=0;i<len;i++){
+   tmpSet.add(inputArray1[i]);
   }
+let myArray = Array.from(tmpSet)
+console.log("Before removing duplicates: "+inputArray1);
+console.log("After removing duplicates: "+myArray);
+
+
+// 5) Find the number of occurances.  
+
+ const num5= [2,4,5,2,1,2];
+ const k = 2 ;
+ var cnt = 0;
+
+for(let i=0;i<num5.length;i++){
+   if(k==num5[i]){
+      cnt= cnt+1;
+   }
+}
+console.log("No.of occurence of "+k+" in {"+num5+"} : "+cnt);
+
+
+// 7) Two Sum 
+
+// const nums = [2,4,7,8,11,14]; 
+// const target = 18;
+
+// return the indices that has matching target? 7+11 (2,4), 4+14 (1,5)
+
+// */
+
+const num6 = [2,4,7,8,11,14];
+const target = 18;
+let len1= num6.length;
+for(let i=0;i<len1;i++){
+   var v=num6[i];
+   for(let j=i+1;j<len1;j++){
+      if((v+num6[j])==target){
+            console.log(v+"+"+num6[j]+" ("+i+","+j+")");
+      }
+   } 
+}
+
+
+
 
 
